@@ -9,7 +9,7 @@ func main() {
 	//changing the value of x by pointer function
 	//ptr := &x
 	//ptrF(ptr)
-
+	
 	// other ways to do this same is
 	ptrF(&x)
 	fmt.Println("New value of x: ", x)
