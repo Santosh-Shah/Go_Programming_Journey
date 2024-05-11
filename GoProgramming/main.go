@@ -15,12 +15,15 @@ func main() {
 	//router.Run(":8082")
 
 	router := gin.Default()
+
+	//TODO: get data
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"Name":    "Vedas College",
 			"Address": "Jawalakhel, Lalitpur, Nepal"})
 	})
 
+	//TODO: get by id requesst
 	router.GET("/me/:id/:newId", func(c *gin.Context) {
 		id := c.Param("id")
 		newId := c.Param("newId")
@@ -31,6 +34,7 @@ func main() {
 		})
 	})
 
+	//TODO: post request
 	router.POST("/me", func(c *gin.Context) {
 		type UserRequest struct {
 			Email    string `json:"email"`
@@ -42,6 +46,31 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"Password": userRequest.Password,
 			"Email":    userRequest.Email,
+		})
+	})
+
+	//TODO:
+	router.PATCH("/me", func(c *gin.Context) {
+		type UserRequest struct {
+			Email    string `json:"email"`
+			Password string `json:"password"`
+		}
+
+		var userRequest UserRequest
+		c.BindJSON(&userRequest)
+		c.JSON(http.StatusOK, gin.H{
+			"Password": userRequest.Password,
+			"Email":    userRequest.Email,
+		})
+	})
+
+	//TODO: delete request
+	router.DELETE("/me/:id", func(c *gin.Context) {
+		var id = c.Param("id")
+
+		c.JSON(http.StatusOK, gin.H{
+			"id":      id,
+			"Message": "Deleted!!!",
 		})
 	})
 
