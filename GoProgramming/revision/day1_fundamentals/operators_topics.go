@@ -15,4 +15,6 @@ func main() {
 	fmt.Println("Equal:", val1 == val2)
 	fmt.Println("Not Equal:", val1 != val2)
 	fmt.Println("Greater than:", val1 > val2)
+	fmt.Println("val1:", val1)
+	fmt.Println("val2:", val2)
 }
