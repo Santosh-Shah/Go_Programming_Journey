@@ -1,32 +1,31 @@
 package main
 
-//import (
-//	"fmt"
-//	"sync"
-//)
-//
-//func sayHello() {
-//	fmt.Println("Hello World")
-//}
-//
-//func printMsg(msg string, wg *sync.WaitGroup) {
-//	defer wg.Done()
-//	fmt.Println(msg)
-//}
-//
-//func main() {
-//	//go sayHello()
-//	//fmt.Println("main function")
-//	//time.Sleep(1 * time.Second)
-//
-//	//TODO: multiple goroutines
-//	var wg sync.WaitGroup
-//	messages := []string{"hello", "world", "!"}
-//	for _, msg := range messages {
-//		wg.Add(1)
-//		go printMsg(msg, &wg)
-//	}
-//
-//	wg.Wait()
-//
-//}
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("----------Main function-----------")
+	go printHello()
+	time.Sleep(2 * time.Second)
+	go printCollege()
+	//time.Sleep(5 * time.Second)
+	fmt.Println("--------------End of main function------------")
+
+}
+
+func printHello() {
+	for i := 0; i < 10; i++ {
+		fmt.Println("Hello world")
+		//time.Sleep(1 * time.Second)
+	}
+}
+
+func printCollege() {
+	//for i := 0; i < 10; i++ {
+	//	fmt.Println("College")
+	//}
+
+	fmt.Println("College")
+}

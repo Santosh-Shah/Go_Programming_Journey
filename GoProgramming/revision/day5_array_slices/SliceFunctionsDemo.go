@@ -13,12 +13,19 @@ func main() {
 	//fmt.Println(slice)
 
 	//TODO: Trimmming a slice
-	trimmedSlice := slice[1:4]
-	fmt.Println(trimmedSlice)
+	//trimmedSlice := slice[1:4]
+	//fmt.Println(trimmedSlice)
 
 	//TODO: Splitting a slice
-	slice1 := slice[:2]
-	slice2 := slice[2:]
-	fmt.Println("First Part:", slice1)
-	fmt.Println("Second Part:", slice2)
+	//slice1 := slice[:2]
+	//slice2 := slice[2:]
+	//fmt.Println("First Part:", slice1)
+	//fmt.Println("Second Part:", slice2)
+	fmt.Println("Original slice:", slice)
+
+	//start := 0
+	//end := 1
+	//fmt.Println(slice[start:end])
+
+	fmt.Println(slice[:1])
 }
